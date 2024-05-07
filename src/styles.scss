@@ -1,1 +1,122 @@
 /* You can add global styles to this file, and also import other style files */
+
+//Body
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0%;
+    margin: 0%;
+    overflow-x: hidden;
+    line-height: 150%;
+
+}
+
+// VARIABLER
+$line-height: 150%;
+$font-style: sans-serif;
+$bar-color: #fff;
+$ball-color: #fff;
+$link-color: rgb(0, 0, 255);
+
+/* Färgschema för ljust */
+$main-color: #ffcc5e;
+$text-color: black;
+$background-color: #87afa4;
+
+
+/* Färgschema för mörkt */
+$main-color-dark: darken($main-color, 30%);
+$text-color-dark: lighten($text-color, 99%);
+$background-color-dark: darken($background-color, 40%);
+
+@mixin center-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin h1-styles {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: $line-height;
+    margin-bottom: 0%;
+    font-family: $font-style;
+}
+
+@mixin h2-styles {
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: $line-height;
+    margin-bottom: 0%;
+    font-family: $font-style;
+}
+
+@mixin h3-styles {
+    font-size: 1.2em;
+    line-height: $line-height;
+    margin-bottom: 0%;
+    font-family: $font-style;
+}
+
+@mixin p-styles {
+    font-size: 1em;
+    line-height: $line-height;
+    margin-top: 0%;
+    font-family: $font-style;
+
+}
+
+// Färgsheman
+
+@media (prefers-color-scheme: light) {
+
+    header,
+    footer,
+    nav,
+    .menu-btn,
+    nav {
+        background-color: $main-color;
+    }
+
+    body {
+        background-color: $background-color;
+    }
+
+    p,
+    h1,
+    h2,
+    li,
+    ul,
+    span,
+    label,
+    table {
+        color: $text-color;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    header,
+    footer,
+    nav,
+    .menu-btn,
+    nav {
+        background-color: $main-color-dark;
+    }
+
+    body {
+        background-color: $background-color-dark;
+    }
+
+    p,
+    h1,
+    h2,
+    li,
+    ul,
+    span,
+    label,
+    table {
+        color: $text-color-dark;
+    }
+}
