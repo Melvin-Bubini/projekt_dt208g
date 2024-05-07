@@ -1,28 +1,46 @@
-<div>
+<div id="mainContainer">
     <h2>Kurser</h2>
-    <form>
-        <label for="search">Sök:</label>
-        <input type="text" name="search" id="search">
+    <form class="form-container">
+        <div class="form-group">
+            <label for="search">Sök:</label>
+            <input type="text" name="search" id="search" placeholder="Sök..." [(ngModel)]="filterValue" (input)="filterCoursedata()">
+        </div>
+        <div class="form-group">
+            <label for="subjectSelect">Ämne:</label>
+            <select name="subjectSelect" id="subjectSelect" [(ngModel)]="selectedSubject" (change)="filterBySubject()">
+                <option value="">Alla</option>
+                <option *ngFor="let subject of uniqueSubjects" [value]="subject">{{ subject }}</option>
+            </select>
+        </div>
     </form>
+
+    <div id="courseAmount">
+        <span class="span" *ngIf="filteredCoursedata.length > 0 || sortedCoursedata.length > 0">Listar {{ filteredCoursedata.length + sortedCoursedata.length }} av {{ coursedatalist.length }} kurser</span>
+    </div>
 
     <table>
         <thead>
             <tr>
-                <td ></td>
-                <td ></td>
-                <td ></td>
+                <td id="coursecodeTd" (click)="sortingFilter('kurskod')">Kurskod</td>
+                <td id="coursenameTd" (click)="sortingFilter('kursnamn')">Kursnamn</td>
+                <td id="pointsTd" (click)="sortingFilter('points')">Poäng</td>
+                <td id="subjectTd" (click)="sortingFilter('subject')">Ämne</td>
+                <td id="syllabusTd">Kursplan</td>
             </tr>
         </thead>
-        <tbody >
+        <tbody id="kurs-list"
+            *ngFor="let coursedata of (sortedCoursedata.length > 0 ? sortedCoursedata : filteredCoursedata)">
             <tr>
-                <td > </td>
-                <td ></td>
-                <td ></td>
+                <td id="coursecodeTd">{{ coursedata.courseCode }}</td>
+                <td id="coursenameTd">{{ coursedata.courseName }}</td>
+                <td id="pointsTd">{{ coursedata.points }}</td>
+                <td id="subjectTd">{{ coursedata.subject }}</td>
+                <td id="syllabusTd"><a id="syllabusLink" [href]="coursedata.syllabus" target="_blank">Kursplan</a></td>
             </tr>
-        </tbody> 
-        
-        <!-- @if (filteredCourses.length === 0) {
-            <span>Inga kurser hittades...</span>
-        } -->
+        </tbody>
+
+        @if (filteredCoursedata.length === 0) {
+        <span>Inga kurser hittades...</span>
+        }
     </table>
 </div>

@@ -1,0 +1,20 @@
+@use '../../styles'; // Inkludera styles.scss
+/* HEADER STYLES*/
+
+/* STÖRRE SKÄRMAR */
+header {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 5em;
+}
+
+#logo-text {
+    color: styles.$text-color;
+    width: fit-content;
+    text-decoration: none;
+    margin-left: 1em;
+    width: 15%;
+}

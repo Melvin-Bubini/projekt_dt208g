@@ -19,7 +19,7 @@ $ball-color: #fff;
 $link-color: rgb(0, 0, 255);
 
 /* Färgschema för ljust */
-$main-color: #ffcc5e;
+$main-color: #8c8aff;
 $text-color: black;
 $background-color: #87afa4;
 
@@ -90,6 +90,7 @@ $background-color-dark: darken($background-color, 40%);
     ul,
     span,
     label,
+    #syllabusLink,
     table {
         color: $text-color;
     }
@@ -116,6 +117,7 @@ $background-color-dark: darken($background-color, 40%);
     ul,
     span,
     label,
+    #syllabusLink,
     table {
         color: $text-color-dark;
     }

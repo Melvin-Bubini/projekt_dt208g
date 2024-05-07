@@ -1,0 +1,77 @@
+@use '../../styles'; // Inkludera styles.scss
+
+// formuläret styles
+
+form {
+    width: 50%;
+    
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px; /* Justera efter behov */
+}
+
+#search {
+    border-radius: 7px;
+    width: 90%;
+    border: 2px solid black;
+    height: 2em;
+    padding: 0%;
+}
+
+#subjectSelect {
+    border-radius: 7px;
+    width: 90%;
+    border: 2px solid black;
+    height: 2em;
+}
+
+#courseAmount {
+    width: 50%;
+    margin-top: 2em; 
+}
+
+
+/* TABELLENS STYLES */
+
+#mainContainer {
+    @include styles.center-element; 
+}
+
+table {
+    margin-top: 3em;
+    border-collapse: collapse;
+    width: 50%;
+    margin-bottom: 3em;
+}
+
+thead td {
+    text-decoration: underline;
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+thead td:hover, #syllabusLink:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+tbody td {
+    border-bottom: solid 1px;
+    padding: 0.5em;
+}
+
+tbody tr {
+    margin-bottom: 1em;
+}
