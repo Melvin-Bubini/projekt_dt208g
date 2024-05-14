@@ -1,0 +1,39 @@
+<div id="mainContainer">
+    <a href="/courses">
+        <h2>Kurser</h2>
+    </a>
+    <a href="/ramschema"><h2>Ramschema</h2></a>
+    <table>
+        <thead>
+            <tr>
+                <td id="coursecodeTd">Kurskod</td>
+                <td id="coursenameTd">Kursnamn</td>
+                <td id="pointsTd">Poäng</td>
+                <td id="subjectTd">Ämne</td>
+                <td id="syllabusTd">Kursplan</td>
+            </tr>
+        </thead>
+        <tbody id="kurs-list" *ngFor="let course of coursedata">
+            <tr>
+                <td id="coursecodeTd">
+                   {{ course.coursecode }}
+                <td>
+                <td id="coursenameTd">
+                   
+                <td>
+                <td id="pointsTd">
+                   
+                <td>
+                <td id="subjectTd">
+                    
+                <td>
+                <td id="syllabusTd"><a id="syllabusLink" >Kursplan</a></td>
+                <td id="deleteTd">Ta bort</td>
+            </tr>
+        </tbody>
+
+        <!-- @if (filteredCoursedata.length === 0) {
+    <span>Inga kurser hittades...</span>
+    } -->
+    </table>
+</div>

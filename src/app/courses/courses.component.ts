@@ -76,6 +76,10 @@ export class CoursesComponent {
     }
   }
 
+  storeCourseInLocalStorage(coursedata: Coursedata): void {
+    // Konvertera kursdata till en JSON-sträng och lagra den i local storage
+    localStorage.setItem('selectedCourse', JSON.stringify(coursedata));
+  }
 
 }
 

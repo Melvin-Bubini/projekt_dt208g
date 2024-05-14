@@ -1,5 +1,9 @@
 <div id="mainContainer">
-    <h2>Kurser</h2>
+    <a href="/courses">
+        <h2>Kurser</h2>
+    </a>
+    <a href="/ramschema"><h2>Ramschema</h2></a>
+    
     <form class="form-container">
         <div class="form-group">
             <label for="search">Sök:</label>
@@ -26,6 +30,7 @@
                 <td id="pointsTd" (click)="sortingFilter('points')">Poäng</td>
                 <td id="subjectTd" (click)="sortingFilter('subject')">Ämne</td>
                 <td id="syllabusTd">Kursplan</td>
+                <td id="deleteTd">Lägg till</td>
             </tr>
         </thead>
         <tbody id="kurs-list"
@@ -36,6 +41,7 @@
                 <td id="pointsTd">{{ coursedata.points }}</td>
                 <td id="subjectTd">{{ coursedata.subject }}</td>
                 <td id="syllabusTd"><a id="syllabusLink" [href]="coursedata.syllabus" target="_blank">Kursplan</a></td>
+                <td id="deleteTd" > <button (click)="storeCourseInLocalStorage(coursedata)">Lägg till</button></td>
             </tr>
         </tbody>
 

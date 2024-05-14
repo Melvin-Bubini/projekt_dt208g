@@ -74,7 +74,7 @@ $background-color-dark: darken($background-color, 40%);
     header,
     footer,
     nav,
-    .menu-btn,
+    button,
     nav {
         background-color: $main-color;
     }
@@ -91,7 +91,8 @@ $background-color-dark: darken($background-color, 40%);
     span,
     label,
     #syllabusLink,
-    table {
+    table,
+    button {
         color: $text-color;
     }
 }
@@ -101,7 +102,7 @@ $background-color-dark: darken($background-color, 40%);
     header,
     footer,
     nav,
-    .menu-btn,
+    button,
     nav {
         background-color: $main-color-dark;
     }
@@ -118,7 +119,8 @@ $background-color-dark: darken($background-color, 40%);
     span,
     label,
     #syllabusLink,
-    table {
+    table,
+    button {
         color: $text-color-dark;
     }
 }
