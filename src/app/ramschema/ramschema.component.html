@@ -2,7 +2,10 @@
     <a href="/courses">
         <h2>Kurser</h2>
     </a>
-    <a href="/ramschema"><h2>Ramschema</h2></a>
+    <a href="/ramschema">
+        <h2>Ramschema</h2>
+    </a>
+    <button (click)="clearLocalStorage()">Rensa local storage</button>
     <table>
         <thead>
             <tr>
@@ -13,27 +16,32 @@
                 <td id="syllabusTd">Kursplan</td>
             </tr>
         </thead>
-        <tbody id="kurs-list" *ngFor="let course of coursedata">
+        <tbody id="kurs-list" *ngFor="let course of selectedCourses">
             <tr>
                 <td id="coursecodeTd">
-                   {{ course.coursecode }}
-                <td>
+                    {{ course.courseCode }}
+                </td>
                 <td id="coursenameTd">
-                   
-                <td>
+                    {{ course.courseName }}
+                </td>
                 <td id="pointsTd">
-                   
-                <td>
+                    {{ course.points }}
+                </td>
                 <td id="subjectTd">
-                    
-                <td>
-                <td id="syllabusTd"><a id="syllabusLink" >Kursplan</a></td>
-                <td id="deleteTd">Ta bort</td>
+                    {{ course.subject }}
+                </td>
+                <td id="syllabusTd"><a id="syllabusLink" [href]="course.syllabus" target="_blank">Kursplan</a></td>
+                <td id="deleteTd"><button (click)="removeCourse(course)">Ta bort</button></td>
             </tr>
         </tbody>
 
-        <!-- @if (filteredCoursedata.length === 0) {
-    <span>Inga kurser hittades...</span>
-    } -->
+        @if (selectedCourses.length === 0) {
+        <span colspan="6">Inga kurser hittades...</span>
+        }
     </table>
+
+    <!-- <div id="ramInfo">
+        <p>Antal kurser: {{ selectedCourses.length }}</p>
+        <p>Totalt antal poäng: {{ getTotalPoints() }}</p>
+    </div> -->
 </div>

@@ -21,7 +21,7 @@ thead td {
     padding: 0.5em;
 }
 
-thead td:hover, #syllabusLink:hover {
+#syllabusLink:hover {
     cursor: pointer;
     text-decoration: none;
 }
@@ -33,4 +33,16 @@ tbody td {
 
 tbody tr {
     margin-bottom: 1em;
+}
+
+#deleteTd {
+    
+
+    button {
+        width: 6em;
+        border: 1px solid black;
+    }
+    button:hover {
+        cursor: pointer;
+    }
 }

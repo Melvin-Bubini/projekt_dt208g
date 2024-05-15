@@ -21,6 +21,7 @@ export class CoursesComponent {
   sortedValue: string = "";
   uniqueSubjects: string[] = []; // Lägg till en egenskap för att lagra unika ämnen
   selectedSubject: string = ""; // Lägg till en egenskap för att lagra det valda ämnet
+  courseAdded: boolean = false;
 
   constructor(private coursedataservice: CoursedataService) { }
 
@@ -77,8 +78,23 @@ export class CoursesComponent {
   }
 
   storeCourseInLocalStorage(coursedata: Coursedata): void {
-    // Konvertera kursdata till en JSON-sträng och lagra den i local storage
-    localStorage.setItem('selectedCourse', JSON.stringify(coursedata));
+    // Hämta befintliga kurser från local storage om det finns några
+    let storedCourses: Coursedata[] = JSON.parse(localStorage.getItem('selectedCourses') || '[]');
+
+    // Lägg till den nya kursen till arrayen
+    storedCourses.push(coursedata);
+
+    // Spara den uppdaterade arrayen till local storage
+    localStorage.setItem('selectedCourses', JSON.stringify(storedCourses));
+
+    // Sätt courseAdded till true för att visa meddelandet
+    this.courseAdded = true;
+
+    // Återställ courseAdded till false efter 2 sekunder
+    setTimeout(() => {
+      this.courseAdded = false;
+    }, 1000);
+
   }
 
 }

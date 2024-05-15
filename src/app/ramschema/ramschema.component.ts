@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RamschemaService } from '../services/ramschema.service';
+import { Coursedata } from '../model/coursedata';
 
 @Component({
   selector: 'app-ramschema',
@@ -9,20 +10,37 @@ import { RamschemaService } from '../services/ramschema.service';
   templateUrl: './ramschema.component.html',
   styleUrl: './ramschema.component.scss'
 })
-export class RamschemaComponent {
+export class RamschemaComponent implements OnInit {
+  selectedCourses: Coursedata[] = [];
 
-  coursedata: any[] = [];
-
-  constructor(private ramschemaService: RamschemaService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // Prenumerera på coursedata
-    this.ramschemaService.getCoursedataObservable().subscribe(data => {
-      this.coursedata = data;
-      // Här kan du göra vad du vill med den uppdaterade coursedatan, t.ex. skriva ut den i HTML
-
-      
-    });
+    this.loadCoursesFromLocalStorage();
   }
 
+  loadCoursesFromLocalStorage(): void {
+    const storedCoursesJSON = localStorage.getItem('selectedCourses');
+    if (storedCoursesJSON) {
+      this.selectedCourses = JSON.parse(storedCoursesJSON);
+    }
+  }
+
+  removeCourse(course: any): void {
+    // Ta bort kursen från local storage
+    let selectedCourses: any[] = JSON.parse(localStorage.getItem('selectedCourses') || '[]');
+    const index = selectedCourses.findIndex((c: any) => c.courseCode === course.courseCode);
+    if (index !== -1) {
+      selectedCourses.splice(index, 1);
+      localStorage.setItem('selectedCourses', JSON.stringify(selectedCourses));
+    }
+
+    // Uppdatera arrayen för att ta bort kursen från skärmen
+    this.selectedCourses = this.selectedCourses.filter((c: any) => c.courseCode !== course.courseCode);
+  }
+
+  clearLocalStorage(): void {
+    localStorage.removeItem('selectedCourses');
+    this.selectedCourses = []; // Uppdatera den lokala arrayen för att tömma den på skärmen
+}
 }

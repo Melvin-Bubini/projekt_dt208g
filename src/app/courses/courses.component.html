@@ -20,6 +20,7 @@
 
     <div id="courseAmount">
         <span class="span" *ngIf="filteredCoursedata.length > 0 || sortedCoursedata.length > 0">Listar {{ filteredCoursedata.length + sortedCoursedata.length }} av {{ coursedatalist.length }} kurser</span>
+        <p class="span" id="savedCourse" *ngIf="courseAdded">Kursen tillagd</p>
     </div>
 
     <table>
