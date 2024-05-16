@@ -1,0 +1,77 @@
+@use '../../styles'; // Inkludera styles.scss
+
+
+#headerText {
+    width: 100vw;
+    @include styles.center-element;
+    margin: 1em auto;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* Jämnt avstånd mellan elementen */
+    margin: 4em auto;
+    /* Centrera container horisontellt */
+    max-width: 1200px;
+    /* Bredden på container, kan justeras efter behov */
+    flex-wrap: wrap;
+    /* Lägg till wrap för att elementen ska kunna radas om vid behov */
+
+}
+
+.imageContainer {
+    flex: 1;
+    /* Dela utrymme jämnt mellan elementen */
+    padding: 20px;
+    /* Lite utrymme runt varje element */
+    text-align: center;
+    /* Centrera innehållet horisontellt */
+    background-color: styles.$main-color;
+    margin: 0 10px;
+    /* Lägg till ett mellanrum på 10px mellan varje imageContainer */
+
+    #pageLink {
+        text-decoration: none;
+
+        h2 {
+            color: styles.$text-color-dark;
+
+        }
+    }
+
+    #pageLink:hover {
+
+        text-decoration: underline white;
+    }
+
+    p {
+        color: styles.$text-color-dark;
+    }
+}
+
+.imageContainer img {
+    max-width: 100%;
+    /* Förhindra att bilden överskrider sin container */
+}
+
+// Media query för ännu mindre skärmar
+@media screen and (max-width: 500px) {
+
+    .container {
+        flex-direction: column;
+        /* Ändra flex-riktningen till kolumn */
+        align-items: center;
+        /* Centrera elementen vertikalt */
+    }
+
+    .imageContainer {
+        flex: 2;
+        margin: 1em 0.5em;
+    }
+
+    .right {
+        margin-bottom: 6em;
+    }
+}

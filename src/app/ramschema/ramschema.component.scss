@@ -6,13 +6,13 @@
 
 #mainContainer {
     @include styles.center-element; 
+    width: 100%;
 }
 
 table {
-    margin-top: 3em;
+    margin: 3em 1em;
     border-collapse: collapse;
     width: 50%;
-    margin-bottom: 3em;
 }
 
 thead td {
@@ -35,14 +35,69 @@ tbody tr {
     margin-bottom: 1em;
 }
 
-#deleteTd {
-    
+#deleteTd, #ramInfo {
+
 
     button {
-        width: 6em;
-        border: 1px solid black;
+        padding: 0.5em;
+        border: 2px solid black;
+        border-radius: 7px;
+        color: white;
+        white-space: nowrap; 
+
     }
+
     button:hover {
         cursor: pointer;
+        color: black;
+    }
+}
+
+#ramInfo {
+    margin: 0 1em 3em;
+    width: 50%;
+}
+
+// Media query för mindre skärmar
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 0.8em; // Justera fontstorlek för mindre skärmar
+    }
+}
+
+// Media query för ännu mindre skärmar
+@media screen and (max-width: 600px) {
+    table {
+        font-size: 0.6em; // Justera fontstorlek för ännu mindre skärmar
+    }
+    #deleteTd {
+
+
+        button {
+            padding: 0.5em;
+            border: 2px solid black;
+            border-radius: 7px;
+            color: white;
+            white-space: nowrap; 
+            font-size: 0.8em;
+        }
+    
+        button:hover {
+            cursor: pointer;
+            color: black;
+        }
+    }
+}
+
+// Media query för ännu mindre skärmar
+@media screen and (max-width: 460px) {
+    table, #ramInfo, button {
+        font-size: 0.5em; // Justera fontstorlek för ännu mindre skärmar
+    }
+}
+
+@media screen and (max-width: 360px) {
+    table, #ramInfo {
+        font-size: 0.4em; // Justera fontstorlek för ännu mindre skärmar
     }
 }

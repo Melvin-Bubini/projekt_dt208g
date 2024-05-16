@@ -1,11 +1,4 @@
 <div id="mainContainer">
-    <a href="/courses">
-        <h2>Kurser</h2>
-    </a>
-    <a href="/ramschema">
-        <h2>Ramschema</h2>
-    </a>
-    <button (click)="clearLocalStorage()">Rensa local storage</button>
     <table>
         <thead>
             <tr>
@@ -40,8 +33,9 @@
         }
     </table>
 
-    <!-- <div id="ramInfo">
+    <div id="ramInfo">
         <p>Antal kurser: {{ selectedCourses.length }}</p>
-        <p>Totalt antal poäng: {{ getTotalPoints() }}</p>
-    </div> -->
+        <p>Totalt antal poäng: {{ totalPoints  }}</p>
+        <button id="clearBtn" (click)="clearLocalStorage()">Rensa local storage</button>
+    </div> 
 </div>

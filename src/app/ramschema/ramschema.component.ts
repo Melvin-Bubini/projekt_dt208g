@@ -12,11 +12,13 @@ import { Coursedata } from '../model/coursedata';
 })
 export class RamschemaComponent implements OnInit {
   selectedCourses: Coursedata[] = [];
+  totalPoints: number = 0;
 
   constructor() { }
 
   ngOnInit(): void {
     this.loadCoursesFromLocalStorage();
+    this.calculateTotalPoints();
   }
 
   loadCoursesFromLocalStorage(): void {
@@ -37,10 +39,18 @@ export class RamschemaComponent implements OnInit {
 
     // Uppdatera arrayen för att ta bort kursen från skärmen
     this.selectedCourses = this.selectedCourses.filter((c: any) => c.courseCode !== course.courseCode);
+
+    // Uppdatera totala poängen efter att man tagit bort kurs
+    this.calculateTotalPoints();
   }
 
   clearLocalStorage(): void {
     localStorage.removeItem('selectedCourses');
     this.selectedCourses = []; // Uppdatera den lokala arrayen för att tömma den på skärmen
-}
+    this.totalPoints = 0; // Återställ poängen
+  }
+
+  calculateTotalPoints(): void {
+    this.totalPoints = this.selectedCourses.reduce((total, course) => total + course.points, 0);
+  }
 }

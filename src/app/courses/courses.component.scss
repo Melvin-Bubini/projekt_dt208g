@@ -7,15 +7,13 @@
 
 // formuläret styles
 
-form {
-    width: 50%;
-    
-}
 
 .form-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 50%;
+    margin-top: 3em;
 }
 
 .form-group {
@@ -24,7 +22,8 @@ form {
 
 .form-group label {
     display: block;
-    margin-bottom: 5px; /* Justera efter behov */
+    margin-bottom: 5px;
+    /* Justera efter behov */
 }
 
 #search {
@@ -44,21 +43,23 @@ form {
 
 #courseAmount {
     width: 50%;
-    margin-top: 2em; 
+    margin-top: 2em;
 }
 
 
 /* TABELLENS STYLES */
 
 #mainContainer {
-    @include styles.center-element; 
+    @include styles.center-element;
+    width: 100%;
+    overflow-x: hidden;
+
 }
 
 table {
-    margin-top: 3em;
+    margin: 3em 1em;
     border-collapse: collapse;
     width: 50%;
-    margin-bottom: 3em;
 }
 
 thead td {
@@ -67,7 +68,8 @@ thead td {
     padding: 0.5em;
 }
 
-thead td:hover, #syllabusLink:hover {
+thead td:hover,
+#syllabusLink:hover {
     cursor: pointer;
     text-decoration: none;
 }
@@ -82,13 +84,65 @@ tbody tr {
 }
 
 #deleteTd {
-    
+
 
     button {
-        width: 6em;
-        border: 1px solid black;
+        padding: 0.5em;
+        border: 2px solid black;
+        color: white;
+        white-space: nowrap;
+        border-radius: 7px;
+
     }
+
     button:hover {
         cursor: pointer;
+        color: black;
+    }
+}
+
+// Media query för mindre skärmar
+@media screen and (max-width: 880px) {
+    table {
+        font-size: 0.8em; // Justera fontstorlek för mindre skärmar
+    }
+}
+
+// Media query för ännu mindre skärmar
+@media screen and (max-width: 700px) {
+    table {
+        font-size: 0.6em; // Justera fontstorlek för ännu mindre skärmar
+    }
+    #deleteTd {
+
+
+        button {
+            padding: 0.5em;
+            border: 2px solid black;
+            border-radius: 7px;
+            color: white;
+            white-space: nowrap; 
+            font-size: 0.8em;
+        }
+    
+        button:hover {
+            cursor: pointer;
+            color: black;
+        }
+    }
+}
+
+// Media query för ännu mindre skärmar
+@media screen and (max-width: 530px) {
+    table, #courseAmount {
+        font-size: 0.5em; // Justera fontstorlek för ännu mindre skärmar
+
+    }
+   
+}
+
+@media screen and (max-width: 440px) {
+    table, #courseAmount {
+        font-size: 0.4em; // Justera fontstorlek för ännu mindre skärmar
     }
 }

@@ -1,10 +1,39 @@
 <header>
-    <a routerLink="/courses"><img id="logo" src="./assets/pictures/standardLogo.svg" alt="Logga"></a>
-    <a id="logo-text" routerLink="/courses">
-        <h3>Projekt</h3>
-    </a>
-    <ul id="bigScreenList">
-        <li><a class="menyLänkar" routerLink="/courses" routerLinkActive="current">Startidan</a></li>
-        <li><a class="menyLänkar" routerLink="/ramschema" routerLinkActive="current">Ramschema</a></li>
-    </ul>
+    <div id="headerDiv">
+        <a routerLink="/home" href="/home"><img id="logo" src="./assets/pictures/standardLogo.svg" alt="Logga"></a>
+        <a id="logo-text" routerLink="/home" href="/home">
+            <h3>MB Universitet</h3>
+        </a>
+    </div>
+
+    <nav id="bigScreenNav">
+        <ul id="bigScreenList">
+            <li><a class="menyLänkar" routerLink="/home" href="/home" routerLinkActive="current">Startidan</a></li>
+            <li><a class="menyLänkar" routerLink="/courses" href="/courses" routerLinkActive="current">Kurser</a></li>
+            <li><a class="menyLänkar" routerLink="/ramschema" href="/ramschema" routerLinkActive="current">Ramschema</a></li>
+        </ul>
+    </nav>
+
+    <button class="menu-btn open" id="open-menu">
+        <span class="menu-icon">
+            <span class="bars"></span>
+            <span class="bars"></span>
+            <span class="bars"></span>
+        </span>
+        <span class="menu-text">Meny</span>
+    </button>
+    <nav id="nav-menu">
+        <button class="menu-btn close" id="close-menu">
+            <span class="menu-icon">
+                <span class="bars cross1"></span>
+                <span class="bars cross2"></span>
+            </span>
+            <span class="menu-text">Stäng</span>
+        </button>
+        <ul>
+            <li><a routerLink="/home" href="/home" routerLinkActive="current">Startidan</a></li>
+            <li><a routerLink="/courses" href="/courses" routerLinkActive="current">Kurser</a></li>
+            <li><a routerLink="/ramschema" href="/ramschema" routerLinkActive="current">Ramschema</a></li>
+        </ul>
+    </nav>
 </header>

@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+// VARIABLER
+$line-height: 150%;
+$font-style: Verdana, sans-serif;
+$bar-color: #fff;
+$ball-color: #fff;
+$link-color: rgb(0, 0, 255);
+
 //Body
 body {
     width: 100vw;
@@ -8,24 +15,18 @@ body {
     margin: 0%;
     overflow-x: hidden;
     line-height: 150%;
-
+    font-family: $font-style;
 }
 
-// VARIABLER
-$line-height: 150%;
-$font-style: sans-serif;
-$bar-color: #fff;
-$ball-color: #fff;
-$link-color: rgb(0, 0, 255);
 
 /* Färgschema för ljust */
-$main-color: #8c8aff;
+$main-color: #002f5f;
 $text-color: black;
-$background-color: #87afa4;
+$background-color: #ffffff;
 
 
 /* Färgschema för mörkt */
-$main-color-dark: darken($main-color, 30%);
+$main-color-dark: #002f5f;
 $text-color-dark: lighten($text-color, 99%);
 $background-color-dark: darken($background-color, 40%);
 
@@ -69,17 +70,14 @@ $background-color-dark: darken($background-color, 40%);
 
 // Färgsheman
 
-@media (prefers-color-scheme: light) {
-
-    header,
+header,
     footer,
-    nav,
     button,
     nav {
         background-color: $main-color;
     }
 
-    body {
+    #mainContainer {
         background-color: $background-color;
     }
 
@@ -95,32 +93,57 @@ $background-color-dark: darken($background-color, 40%);
     button {
         color: $text-color;
     }
-}
 
-@media (prefers-color-scheme: dark) {
+// @media (prefers-color-scheme: light) {
 
-    header,
-    footer,
-    nav,
-    button,
-    nav {
-        background-color: $main-color-dark;
-    }
+//     header,
+//     footer,
+//     button,
+//     nav {
+//         background-color: $main-color;
+//     }
 
-    body {
-        background-color: $background-color-dark;
-    }
+//     #mainContainer {
+//         background-color: $background-color;
+//     }
 
-    p,
-    h1,
-    h2,
-    li,
-    ul,
-    span,
-    label,
-    #syllabusLink,
-    table,
-    button {
-        color: $text-color-dark;
-    }
-}
+//     p,
+//     h1,
+//     h2,
+//     li,
+//     ul,
+//     span,
+//     label,
+//     #syllabusLink,
+//     table,
+//     button {
+//         color: $text-color;
+//     }
+// }
+
+// @media (prefers-color-scheme: dark) {
+
+//     header,
+//     footer,
+//     button,
+//     nav {
+//         background-color: $main-color-dark;
+//     }
+
+//     #mainContainer {
+//         background-color: $background-color-dark;
+//     }
+
+//     p,
+//     h1,
+//     h2,
+//     li,
+//     ul,
+//     span,
+//     label,
+//     #syllabusLink,
+//     table,
+//     button {
+//         color: $text-color-dark;
+//     }
+// }
