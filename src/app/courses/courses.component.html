@@ -3,8 +3,10 @@
     <form class="form-container">
         <div class="form-group">
             <label for="search">Sök:</label>
-            <input type="text" name="search" id="search" placeholder="Sök..." [(ngModel)]="filterValue" (input)="filterCoursedata()">
-        </div>
+            <div class="search-wrapper">
+                <input type="text" name="search" id="search" placeholder="Sök..." [(ngModel)]="filterValue" (input)="filterCoursedata()">
+                <img src="/assets/icons/search.png" alt="">
+            </div>        </div>
         <div class="form-group">
             <label for="subjectSelect">Ämne:</label>
             <select name="subjectSelect" id="subjectSelect" [(ngModel)]="selectedSubject" (change)="filterBySubject()">

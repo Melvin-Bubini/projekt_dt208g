@@ -1,3 +1,5 @@
+@use '../../styles'; // Inkludera styles.scss
+
 // Footer
 footer {
     position: fixed;
@@ -8,8 +10,35 @@ footer {
     text-align: center;
 }
 
+.iconText:hover {
+    text-decoration: none;
+
+}
+
+.iconText {
+    color: styles.$link-color;
+    margin-left: 3px;
+
+}
+
+.btn {
+    padding: 0.25em;
+    border: 2px solid rgb(0, 0, 0);
+    white-space: nowrap;
+    border-radius: 7px;
+    background-color: white;
+    margin-bottom: 1px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: black;
+}
+
+
 footer p {
     margin: 0;
     font-weight: 600;
-    margin-top: 10px; /* justera avståndet mellan fotertext och sidofoten */
+    margin-top: 10px;
+    color: white;
 }

@@ -26,17 +26,33 @@
     /* Justera efter behov */
 }
 
+.search-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
 #search {
     border-radius: 7px;
-    width: 90%;
+    width: 70%;
     border: 2px solid black;
     height: 2em;
-    padding: 0%;
+    padding-left: 20px; 
+    background-color: transparent; /* Gör bakgrunden genomskinlig */
+}
+
+#search + img {
+    position: absolute;
+    left: 5px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px; 
+    height: auto;
 }
 
 #subjectSelect {
     border-radius: 7px;
-    width: 90%;
+    width: 70%;
     border: 2px solid black;
     height: 2em;
 }
