@@ -8,6 +8,15 @@ footer {
     width: 100%;
     padding: 10px 0;
     text-align: center;
+
+    div {
+        margin: 0 3px;
+    }
+}
+
+.footer-container {
+    display: flex; /* Använd flexbox */
+    justify-content: center; /* Centrera innehållet horisontellt */
 }
 
 .iconText:hover {
