@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RamschemaService } from '../services/ramschema.service';
 import { Coursedata } from '../model/coursedata';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-ramschema',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './ramschema.component.html',
   styleUrl: './ramschema.component.scss'
 })
