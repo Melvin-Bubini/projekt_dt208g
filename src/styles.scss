@@ -19,13 +19,11 @@ body {
 }
 
 
-/* Färgschema för ljust */
 $main-color: #002f5f;
 $text-color: black;
 $background-color: #ffffff;
 
 
-/* Färgschema för mörkt */
 $main-color-dark: #002f5f;
 $text-color-dark: lighten($text-color, 99%);
 $background-color-dark: darken($background-color, 40%);
@@ -68,7 +66,6 @@ $background-color-dark: darken($background-color, 40%);
 
 }
 
-// Färgsheman
 
 header,
     footer,
@@ -93,57 +90,3 @@ header,
     button {
         color: $text-color;
     }
-
-// @media (prefers-color-scheme: light) {
-
-//     header,
-//     footer,
-//     button,
-//     nav {
-//         background-color: $main-color;
-//     }
-
-//     #mainContainer {
-//         background-color: $background-color;
-//     }
-
-//     p,
-//     h1,
-//     h2,
-//     li,
-//     ul,
-//     span,
-//     label,
-//     #syllabusLink,
-//     table,
-//     button {
-//         color: $text-color;
-//     }
-// }
-
-// @media (prefers-color-scheme: dark) {
-
-//     header,
-//     footer,
-//     button,
-//     nav {
-//         background-color: $main-color-dark;
-//     }
-
-//     #mainContainer {
-//         background-color: $background-color-dark;
-//     }
-
-//     p,
-//     h1,
-//     h2,
-//     li,
-//     ul,
-//     span,
-//     label,
-//     #syllabusLink,
-//     table,
-//     button {
-//         color: $text-color-dark;
-//     }
-// }
